@@ -4,9 +4,9 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install git -y
 RUN apt-get install apache2 -y
-ADD test.html /var/www/html
+RUN apt-get install golang -y
+RUN apt-get install vim -y
 WORKDIR /var/www/html
 RUN git clone https://github.com/nsyu/gows.git
-RUN ["/bin/bash", "-c", "echo hello >> test2.html"]
-EXPOSE 80
+EXPOSE 80 5000
 CMD apachectl -DFOREGROUND
