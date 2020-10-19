@@ -43,6 +43,7 @@ PS C:\dev\github\gows> docker exec -it pensive_hofstadter
 ```
 docker build -t mybuild:0.0 ./
 docker run -d -P -p 80:80 --name myserver mybuild:0.0
+docker exec -it myserver bash
 http://localhost/
 ```
 
