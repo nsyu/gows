@@ -18,8 +18,15 @@ services:
       - DBHOST=mysql
   node:
     build: ./node
-    # 연결할 외부 디렉토리 : 컨테이너 내 디렉토리
     volumes:
       - ./node:/home/node/app
     ports:
       - "8080:8080"
+  go:
+    build: ./go
+    volumes:
+      - ./go:/go/src/app
+    ports:
+      - "4000:4000"
+    environment: 
+      - DBHOST=mysql

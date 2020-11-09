@@ -1,41 +1,41 @@
 ## Docker nginx Setting
 
 ```
-PS C:\dev\github\gows> docker pull nginx
-PS C:\dev\github\gows> docker ps
-PS C:\dev\github\gows> docker ps -a
-PS C:\dev\github\gows> docker images
-PS C:\dev\github\gows> docker run -dp 80:80 nginx
-PS C:\dev\github\gows> docker ps
-PS C:\dev\github\gows> docker exec -it d2824a1d3b41 /bin/bash
+docker pull nginx
+docker ps
+docker ps -a
+docker images
+docker run -dp 80:80 nginx
+docker ps
+docker exec -it d2824a1d3b41 /bin/bash
 ```
 
 ```
-root@d2824a1d3b41:/# apt-get update
-root@d2824a1d3b41:/# apt-get install vim
-root@d2824a1d3b41:/# mkdir /home/html
-root@d2824a1d3b41:/home/html# vim index.html
+apt-get update
+apt-get install vim
+mkdir /home/html
+vim index.html
 ```
 
 ```
-# docker run --name nginx-test -v /home/html:/usr/share/nginx/html:ro -d -p 80:80 nginx
+docker run --name nginx-test -v /home/html:/usr/share/nginx/html:ro -d -p 80:80 nginx
 ```
 
 ## Docker image container Delete
 
 ```
-PS C:\dev\github\gows> docker stop $(docker ps -a -q)
-PS C:\dev\github\gows> docker rm $(docker ps -a -q)
-PS C:\dev\github\gows> docker rmi $(docker images -a -q)
-PS C:\dev\github\gows> docker images
-PS C:\dev\github\gows> docker ps -a
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -a -q)
+docker images
+docker ps -a
 ```
 
 ## Docker Node Start
 
 ```
-PS C:\dev\github\gows> docker run -it node
-PS C:\dev\github\gows> docker exec -it pensive_hofstadter
+docker run -it node
+docker exec -it pensive_hofstadter
 ```
 
 ## Docker apache Build
